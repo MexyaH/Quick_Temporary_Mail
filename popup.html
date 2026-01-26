@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temp Mail Quick</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">📧</div>
+      <h1>Temp Mail</h1>
+    </header>
+    
+    <!-- Main View -->
+    <main id="mainView">
+      <div class="email-section">
+        <label>Your temporary email:</label>
+        <div class="email-box">
+          <input type="text" id="emailAddress" readonly placeholder="Loading...">
+          <button id="copyBtn" class="icon-btn" title="Copy to clipboard">
+            <span id="copyIcon">📋</span>
+          </button>
+        </div>
+        <div id="copyFeedback" class="feedback hidden">Copied!</div>
+      </div>
+      
+      <div class="actions">
+        <button id="newEmailBtn" class="btn btn-secondary">
+          🔄 New Email
+        </button>
+        <button id="openInboxBtn" class="btn btn-primary">
+          📥 Open Inbox
+        </button>
+      </div>
+      
+      <div class="info">
+        <p>⏱️ Emails are temporary and will expire</p>
+      </div>
+    </main>
+
+    <!-- Inbox View -->
+    <div id="inboxView" class="hidden">
+      <div class="inbox-header">
+        <button id="backBtn" class="back-btn">← Back</button>
+        <button id="refreshBtn" class="refresh-btn">🔄</button>
+      </div>
+      
+      <div class="inbox-email">
+        <span id="inboxEmail">loading@example.com</span>
+      </div>
+      
+      <div id="messageList" class="message-list">
+        <div class="loading">Loading messages...</div>
+      </div>
+      
+      <div id="emptyInbox" class="empty-inbox hidden">
+        <div class="empty-icon">📭</div>
+        <p>No messages yet</p>
+        <p class="hint">Waiting for incoming emails...</p>
+      </div>
+    </div>
+
+    <!-- Message View -->
+    <div id="messageView" class="hidden">
+      <div class="inbox-header">
+        <button id="backToInboxBtn" class="back-btn">← Inbox</button>
+      </div>
+      
+      <div class="message-detail">
+        <div class="message-subject" id="msgSubject">Subject</div>
+        <div class="message-from" id="msgFrom">From: sender@example.com</div>
+        <div class="message-date" id="msgDate">Date: --</div>
+        <div class="message-body" id="msgBody">Loading...</div>
+      </div>
+    </div>
+    
+    <footer>
+      <p>Powered by <a href="https://mail.tm" target="_blank">mail.tm</a></p>
+    </footer>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
